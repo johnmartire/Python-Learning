@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main() {
+int main() 
+{
     int myFavoriteNumber = 0;
 
     printf("Please enter your favortite number\n");
