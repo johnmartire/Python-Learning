@@ -9,9 +9,9 @@ int main()
  enum color purple=PURPLE; 
  enum color red=RED;
 
- printf("The value of blue is 0: %d\n", BLUE);
- printf("The value of purple is 3: %d\n", PURPLE);
- printf("The value of red is 1: %d\n", RED);
+ printf("The value of blue is: %d\n", BLUE);
+ printf("The value of purple is: %d\n", PURPLE);
+ printf("The value of red is: %d\n", RED);
 
  return 0;
 }
