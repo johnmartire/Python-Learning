@@ -1,22 +1,18 @@
 #include <stdio.h>
+int main()
 
-int main (void) 
 {
-    
-    double height = (2.45);
-    double width = (5.35);
-    double sum = height + width;
-    
-    
-    double perimeter=2.0*(sum);
-    double area = width*height;
+    double height;
+    double width;
 
-    
-    printf("The area of a rectangle is: %.2f\n", area);
-    printf("The perimeter of a rectangle is: %.2f\n", perimeter);
+    printf ("Enter height:");
+    scanf("%lf", &height);
+    printf("Enter width:");
+    scanf("%lf", &width);
+    double product=width*height; 
+    printf( "The area is: %f\n", product);
 
-    
-    
 
-return 0;
+    return 0;
+
 }
