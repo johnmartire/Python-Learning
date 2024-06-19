@@ -1,15 +1,18 @@
+// Program to convert years to day
 #include <stdio.h>
-int main(void)
+#include <stdlib.h>
+
+int main()
 
 {
-    int minutes;
-    printf ("Enter the amount of minutes:");
-    scanf ("%lf", &minutes);
-    double days = minutes / (60 * 24);
-    int years = days = 365.25;
-    double remainingDays = days = (years * 365);
+    double YearsToDays;
+    double years;
+    double days = (365.25)
 
-    printf("Converted into years and days: %d years and %.2f days\n", years, remainingDays);
+        printf("Enter the number of years:\n");
+    scanf("%d", &years);
+    double YearsToDays = (years * days);
+    printf("%lf, years is approximatley:\n", years, YearsToDays);
 
     return 0;
 }
