@@ -1,0 +1,6 @@
+print("Welcome to the tip calculator!")
+bill=input("What was the total bill? ")
+tip=input("How much tip would you like to give ? 10, 12 , or 15?")
+spilt=input("How many people to spilt the bill? ")
+print(tip/100 * bill)
+print("Each person should pay:" + bill/spilt)
