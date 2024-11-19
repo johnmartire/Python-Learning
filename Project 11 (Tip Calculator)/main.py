@@ -1,4 +1,3 @@
-
 print("Welcome to the tip calculator!")
 bill =input("what is the total bill? $")
 tip=input("How much tip would like to give? 10, 12, or 15? ")
