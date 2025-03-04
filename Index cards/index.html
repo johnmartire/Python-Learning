@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acronym Flashcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+
+        .flashcard {
+            width: 300px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #e42417;
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .flashcard:hover {
+            transform: scale(1.05);
+        }
+
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="flashcard" class="flashcard" onclick="toggleFlashcard()">
+        <span id="text"></span>
+    </div>
+    <div class="button-container">
+        <button onclick="prevCard()">Previous</button>
+        <button onclick="nextCard()">Next</button>
+    </div>
+
+    <script>
+        const acronyms = [
+            { acronym: "AAA", meaning: "Authentication, Authorization, and Accounting" },
+            { acronym: "AC", meaning: "Alternating Current" },
+            { acronym: "ACL", meaning: "Access Control List" },
+            { acronym: "ADF", meaning: "Automatic Document Feeder" },
+            { acronym: "AES", meaning: "Advanced Encryption Standard" },
+            { acronym: "AP", meaning: "Access Point" },
+            { acronym: "APFS", meaning: "Apple File System" },
+            { acronym: "APIPA", meaning: "Automatic Private Internet Protocol Addressing" },
+            { acronym: "APK", meaning: "Android Package" },
+            { acronym: "ARM", meaning: "Advanced RISC (Reduced Instruction Set Computer) Machine" },
+            { acronym: "ARP", meaning: "Address Resolution Protocol" },
+            { acronym: "ATA", meaning: "Advanced Technology Attachment" },
+            { acronym: "ATM", meaning: "Asynchronous Transfer Mode" },
+            { acronym: "ATX", meaning: "Advanced Technology Extended" },
+            { acronym: "AUP", meaning: "Acceptable Use Policy" },
+            { acronym: "BIOS", meaning: "Basic Input/Output System" },
+            { acronym: "BSOD", meaning: "Blue Screen of Death" },
+            { acronym: "BYOD", meaning: "Bring Your Own Device" },
+            { acronym: "CAD", meaning: "Computer-aided Design" },
+            { acronym: "CAPTCHA", meaning: "Completely Automated Public Turing Test to Tell Computers and Humans Apart" },
+            { acronym: "CD", meaning: "Compact Disc" },
+            { acronym: "CDFS", meaning: "Compact Disc File System" },
+            { acronym: "CDMA", meaning: "Code-Division Multiple Access" },
+            { acronym: "CERT", meaning: "Computer Emergency Response Team" },
+            { acronym: "CIFS", meaning: "Common Internet File System" },
+            { acronym: "CMD", meaning: "Command Prompt" },
+            { acronym: "CMOS", meaning: "Complementary Metal-Oxide Semiconductor" },
+            { acronym: "CPU", meaning: "Central Processing Unit" },
+            { acronym: "CRL", meaning: "Certificate Revocation List" },
+            { acronym: "DC", meaning: "Direct Current" },
+            { acronym: "DDoS", meaning: "Distributed Denial of Service" },
+            { acronym: "DDR", meaning: "Double Data Rate" },
+            { acronym: "DHCP", meaning: "Dynamic Host Configuration Protocol" },
+            { acronym: "DIMM", meaning: "Dual Inline Memory Module" },
+            { acronym: "DKIM", meaning: "DomainKeys Identified Mail" },
+            { acronym: "DMA", meaning: "Direct Memory Access" },
+            { acronym: "DMARC", meaning: "Domain-based Message Authentication, Reporting, and Conformance" },
+            { acronym: "DNS", meaning: "Domain Name System" },
+            { acronym: "DoS", meaning: "Denial of Service" },
+            { acronym: "DRAM", meaning: "Dynamic Random-Access Memory" },
+            { acronym: "DRM", meaning: "Digital Rights Management" },
+            { acronym: "DSL", meaning: "Digital Subscriber Line" },
+            { acronym: "DVI", meaning: "Digital Visual Interface" },
+            { acronym: "DVI-D", meaning: "Digital Visual Interface-Digital" },
+            { acronym: "ECC", meaning: "Error Correcting Code" },
+            { acronym: "EFS", meaning: "Encrypting File System" },
+            { acronym: "EMI", meaning: "Electromagnetic Interference" },
+            { acronym: "EOL", meaning: "End-of-Life" },
+            { acronym: "eSATA", meaning: "External Serial Advanced Technology Attachment" },
+            { acronym: "ESD", meaning: "Electrostatic Discharge" },
+            { acronym: "EULA", meaning: "End-User License Agreement" },
+            { acronym: "exFAT", meaning: "Extensible File Allocation Table" },
+            { acronym: "ext", meaning: "Extended File System" },
+            { acronym: "FAT", meaning: "File Allocation Table" },
+            { acronym: "FAT12", meaning: "12-bit File Allocation Table" },
+            { acronym: "FAT16", meaning: "16-bit File Allocation Table" },
+            { acronym: "FAT32", meaning: "32-bit File Allocation Table" },
+            { acronym: "FSB", meaning: "Front-Side Bus" },
+            { acronym: "FTP", meaning: "File Transfer Protocol" },
+            { acronym: "GFS", meaning: "Grandfather-Father-Son" },
+            { acronym: "GPS", meaning: "Global Positioning System" },
+            { acronym: "GPT", meaning: "GUID (Globally Unique Identifier) Partition Table" },
+            { acronym: "GPU", meaning: "Graphics Processing Unit" },
+            { acronym: "GSM", meaning: "Global System for Mobile Communications" },
+            { acronym: "GUI", meaning: "Graphical User Interface" },
+            { acronym: "GUID", meaning: "Globally Unique Identifier" },
+            { acronym: "HAL", meaning: "Hardware Abstraction Layer" },
+            { acronym: "HAV", meaning: "Hardware-assisted Virtualization" },
+            { acronym: "HCL", meaning: "Hardware Compatibility List" },
+            { acronym: "HDCP", meaning: "High-bandwidth Digital Content Protection" },
+            { acronym: "HDD", meaning: "Hard Disk Drive" },
+            { acronym: "HDMI", meaning: "High-Definition Multimedia Interface" },
+            { acronym: "HSM", meaning: "Hardware Security Module" },
+            { acronym: "HTML", meaning: "Hypertext Markup Language" },
+            { acronym: "HTTP", meaning: "Hypertext Transfer Protocol" },
+            { acronym: "HTTPS", meaning: "Hypertext Transfer Protocol Secure" },
+            { acronym: "I/O", meaning: "Input/Output" },
+            { acronym: "IaaS", meaning: "Infrastructure as a Service" },
+            { acronym: "ICR", meaning: "Intelligent Character Recognition" },
+            { acronym: "IDE", meaning: "Integrated Drive Electronics" },
+            { acronym: "IDS", meaning: "Intrusion Detection System" },
+            { acronym: "IEEE", meaning: "Institute of Electrical and Electronics Engineers" },
+            { acronym: "IMAP", meaning: "Internet Mail Access Protocol" },
+            { acronym: "IOPS", meaning: "Input/Output Operations Per Second" },
+            { acronym: "IoT", meaning: "Internet of Things" },
+            { acronym: "IP", meaning: "Internet Protocol" },
+            { acronym: "IPS", meaning: "Intrusion Prevention System" },
+            { acronym: "IPS", meaning: "In-plane Switching" },
+            { acronym: "IPSec", meaning: "Internet Protocol Security" },
+            { acronym: "IR", meaning: "Infrared" },
+            { acronym: "IrDA", meaning: "Infrared Data Association" },
+            { acronym: "IRP", meaning: "Incident Response Plan" },
+            { acronym: "ISO", meaning: "International Organization for Standardization" },
+            { acronym: "ISP", meaning: "Internet Service Provider" },
+            { acronym: "ITX", meaning: "Information Technology eXtended" },
+            { acronym: "KB", meaning: "Knowledge Base" },
+            { acronym: "KVM", meaning: "Keyboard-Video-Mouse" },
+            { acronym: "LAN", meaning: "Local Area Network" },
+            { acronym: "LC", meaning: "Lucent Connector" },
+            { acronym: "LCD", meaning: "Liquid Crystal Display" },
+            { acronym: "LDAP", meaning: "Lightweight Directory Access Protocol" },
+            { acronym: "LED", meaning: "Light-emitting Diode" },
+            { acronym: "MAC", meaning: "Media Access Control/Mandatory Access Control" },
+            { acronym: "MAM", meaning: "Mobile Application Management" },
+            { acronym: "MAN", meaning: "Metropolitan Area Network" },
+            { acronym: "MBR", meaning: "Master Boot Record" },
+            { acronym: "MDM", meaning: "Mobile Device Management" },
+            { acronym: "MFA", meaning: "Multifactor Authentication" },
+            { acronym: "MFD", meaning: "Multifunction Device" },
+            { acronym: "MFP", meaning: "Multifunction Printer" },
+            { acronym: "MMC", meaning: "Microsoft Management Console" },
+            { acronym: "MMC", meaning: "Microsoft Management Console" },
+            { acronym: "MOU", meaning: "Memorandum of Understanding" },
+            { acronym: "MSDS", meaning: "Material Safety Data Sheet" },
+            { acronym: "MSRA", meaning: "Microsoft Remote Assistance" },
+            { acronym: "MX", meaning: "Mail Exchange" },
+            { acronym: "NAC", meaning: "Network Access Control" },
+            { acronym: "NAT", meaning: "Network Address Translation" },
+            { acronym: "NDA", meaning: "Non-disclosure Agreement" },
+            { acronym: "NetBIOS", meaning: "Networked Basic Input/Output System" },
+            { acronym: "NetBT", meaning: "NetBIOS over TCP/IP (Transmission Control Protocol/Internet Protocol)" },
+            { acronym: "NFC", meaning: "Near-field Communication" },
+            { acronym: "NFS", meaning: "Network File System" },
+            { acronym: "NIC", meaning: "Network Interface Card" },
+            { acronym: "NTFS", meaning: "New Technology File System" },
+            { acronym: "NVMe", meaning: "Non-volatile Memory Express" },
+            { acronym: "OCR", meaning: "Optical Character Recognition" },
+            { acronym: "OLED", meaning: "Organic Light-emitting Diode" },
+            { acronym: "ONT", meaning: "Optical Network Terminal" },
+            { acronym: "OS", meaning: "Operating System" },
+            { acronym: "PaaS", meaning: "Platform as a Service" },
+            { acronym: "PAN", meaning: "Personal Area Network" },
+            { acronym: "PC", meaning: "Personal Computer" },
+            { acronym: "PCIe", meaning: "Peripheral Component Interconnect Express" },
+            { acronym: "PCL", meaning: "Printer Command Language" },
+            { acronym: "PE", meaning: "Preinstallation Environment" },
+            { acronym: "PII", meaning: "Personally Identifiable Information" },
+            { acronym: "PIN", meaning: "Personal Identification Number" },
+            { acronym: "PKI", meaning: "Public Key Infrastructure" },
+            { acronym: "PoE", meaning: "Power over Ethernet" },
+            { acronym: "POP3", meaning: "Post Office Protocol 3" },
+            { acronym: "POST", meaning: "Power-on Self-Test" },
+            { acronym: "PPP", meaning: "Point-to-Point Protocol" },
+            { acronym: "PRL", meaning: "Preferred Roaming List" },
+            { acronym: "PSU", meaning: "Power Supply Unit" },
+            { acronym: "PXE", meaning: "Preboot Execution Environment" },
+            { acronym: "RADIUS", meaning: "Remote Authentication Dial-in User Service" },
+            { acronym: "RAID", meaning: "Redundant Array of Independent (or Inexpensive) Disks" },
+            { acronym: "RAM", meaning: "Random-access Memory" },
+            { acronym: "RDP", meaning: "Remote Desktop Protocol" },
+            { acronym: "RF", meaning: "Radio Frequency" },
+            { acronym: "RFI", meaning: "Radio-Frequency Interference" },
+            { acronym: "RFID", meaning: "Radio-Frequency Identification" },
+            { acronym: "RJ11", meaning: "Registered Jack Function 11" },
+            { acronym: "RJ45", meaning: "Registered Jack Function 45" },
+            { acronym: "RMM", meaning: "Remote Monitoring and Management" },
+            { acronym: "RTO", meaning: "Recovery Time Objective" },
+            { acronym: "SaaS", meaning: "Software as a Service" },
+            { acronym: "SAN", meaning: "Storage Area Network" },
+            { acronym: "SAS", meaning: "Serial Attached SCSI (Small Computer System Interface)" },
+            { acronym: "SATA", meaning: "Serial Advanced Technology Attachment" },
+            { acronym: "SC", meaning: "Subscriber Connector" },
+            { acronym: "SCADA", meaning: "Supervisory Control and Data Acquisition" },
+            { acronym: "SCP", meaning: "Secure Copy Protection" },
+            { acronym: "SCSI", meaning: "Small Computer System Interface" },
+            { acronym: "SDN", meaning: "Software-defined Networking" },
+            { acronym: "SFTP", meaning: "Secure File Transfer Protocol" },
+            { acronym: "SIM", meaning: "Subscriber Identity Module" },
+            { acronym: "SIMM", meaning: "Single Inline Memory Module" },
+            { acronym: "S.M.A.R.T.", meaning: "Self-monitoring Analysis and Reporting Technology" },
+            { acronym: "SMB", meaning: "Server Message Block" },
+            { acronym: "SMS", meaning: "Short Message Service" },
+            { acronym: "SMTP", meaning: "Simple Mail Transfer Protocol" },
+            { acronym: "SNMP", meaning: "Simple Network Management Protocol" },
+            { acronym: "SNTP", meaning: "Simple Network Time Protocol" },
+            { acronym: "SODIMM", meaning: "Small Outline Dual Inline Memory Module" },
+            { acronym: "SOHO", meaning: "Small Office/Home Office" },
+            { acronym: "SPF", meaning: "Sender Policy Framework" },
+            { acronym: "SQL", meaning: "Structured Query Language" },
+            { acronym: "SRAM", meaning: "Static Random-access Memory" },
+            { acronym: "SSD", meaning: "Solid-State Drive" },
+            { acronym: "SSH", meaning: "Secure Shell" },
+            { acronym: "SSID", meaning: "Service Set Identifier" },
+            { acronym: "SSL", meaning: "Secure Sockets Layer" },
+            { acronym: "SSO", meaning: "Single Sign-on" },
+            { acronym: "ST", meaning: "Straight Tip" },
+            { acronym: "STP", meaning: "Shielded Twisted Pair" },
+            { acronym: "TACACS", meaning: "Terminal Access Controller Access-Control System" },
+            { acronym: "TCP", meaning: "Transmission Control Protocol" },
+            { acronym: "TCP/IP", meaning: "Transmission Control Protocol/Internet Protocol" },
+            { acronym: "TFTP", meaning: "Trivial File Transfer Protocol" },
+            { acronym: "TKIP", meaning: "Temporal Key Integrity Protocol" },
+            { acronym: "TLS", meaning: "Transport Layer Security" },
+            { acronym: "TN", meaning: "Twisted Nematic" },
+            { acronym: "TPM", meaning: "Trusted Platform Module" },
+            { acronym: "UAC", meaning: "User Account Control" },
+            { acronym: "UDP", meaning: "User Datagram Protocol" },
+            { acronym: "UEFI", meaning: "Unified Extensible Firmware Interface" },
+            { acronym: "UNC", meaning: "Universal Naming Convention" },
+            { acronym: "UPnP", meaning: "Universal Plug and Play" },
+            { acronym: "UPS", meaning: "Uninterruptible Power Supply" },
+            { acronym: "USB", meaning: "Universal Serial Bus" },
+            { acronym: "UTM", meaning: "Unified Threat Management" },
+            { acronym: "UTP", meaning: "Unshielded Twisted Pair" },
+            { acronym: "VA", meaning: "Vertical Alignment" },
+            { acronym: "VDI", meaning: "Virtual Desktop Infrastructure" },
+            { acronym: "VGA", meaning: "Video Graphics Array" },
+            { acronym: "VLAN", meaning: "Virtual LAN (Local Area Network)" },
+            { acronym: "VM", meaning: "Virtual Machine" },
+            { acronym: "VNC", meaning: "Virtual Network Computer" },
+            { acronym: "VoIP", meaning: "Voice over Internet Protocol" },
+            { acronym: "VPN", meaning: "Virtual Private Network" },
+            { acronym: "VRAM", meaning: "Video Random-access Memory" },
+            { acronym: "WAN", meaning: "Wide Area Network" },
+            { acronym: "WEP", meaning: "Wired Equivalent Privacy" },
+            { acronym: "WISP", meaning: "Wireless Internet Service Provider" },
+            { acronym: "WLAN", meaning: "Wireless LAN (Local Area Network)" },
+            { acronym: "WMN", meaning: "Wireless Mesh Network" },
+            { acronym: "WPA", meaning: "WiFi Protected Access" },
+            { acronym: "WWAN", meaning: "Wireless Wide Area Network" },
+            { acronym: "XSS", meaning: "Cross-site Scripting" },
+        ];
+
+        let currentIndex = 0;
+        let showMeaning = false;
+
+        const flashcard = document.getElementById('flashcard');
+        const text = document.getElementById('text');
+
+        function updateFlashcard() {
+            const current = acronyms[currentIndex];
+            text.textContent = showMeaning ? current.meaning : current.acronym;
+        }
+
+        function toggleFlashcard() {
+            showMeaning = !showMeaning;
+            updateFlashcard();
+        }
+
+        function prevCard() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                showMeaning = false;
+                updateFlashcard();
+            }
+        }
+
+        function nextCard() {
+            if (currentIndex < acronyms.length - 1) {
+                currentIndex++;
+                showMeaning = false;
+                updateFlashcard();
+            }
+        }
+
+        // Initialize the first card
+        updateFlashcard();
+    </script>
+</body>
+
+</html>
