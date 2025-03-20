@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d6156fc-d97d-4766-890b-fb41a1406f8d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Project 10/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 11/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 12/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project 12/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 15/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project 15/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 17(treasure island)/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 7/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 7/main.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 8/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 8/main.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 9/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 9/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/tasks.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,23 +15,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2pDLgYesP4zIVoGNYLV2waIJTfF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -56,6 +50,9 @@
       <option name="presentableId" value="Default" />
       <updated>1732295812617</updated>
       <workItem from="1732295814905" duration="99000" />
+      <workItem from="1741982769423" duration="16000" />
+      <workItem from="1741982806286" duration="45000" />
+      <workItem from="1742132998852" duration="103000" />
     </task>
     <servers />
   </component>
