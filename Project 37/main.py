@@ -1,163 +1,21 @@
-from turtle import Turtle,Screen
+import turtle as t
 import random
-tim=Turtle()
-tim.shape("arrow")
-tim.color("red")
 
-def triangle():
-    tim.color("red")
-    tim.right(120)
-    tim.forward(100)
-    tim.right(120)
-    tim.forward(100)
-    tim.right(120)
-    tim.forward(100)
-    
-def square():
-    tim.color("yellow")
-    tim.right(90)
-    tim.forward(100)
-    tim.right(90)
-    tim.forward(100)
-    tim.right(90)
-    tim.forward(100)
-    tim.right(90)
-    tim.forward(100)
-def pentagon():
-    tim.color("orange")
-    tim.right(72)
-    tim.forward(100)
-    tim.right(72)
-    tim.forward(100)
-    tim.right(72)
-    tim.forward(100)
-    tim.right(72)
-    tim.forward(100)
-    tim.right(72)
-    tim.forward(100)
-def hex():
-    tim.color("medium orchid")
-    tim.right(60)
-    tim.forward(100)
-    tim.right(60)
-    tim.forward(100)
-    tim.right(60)
-    tim.forward(100)
-    tim.right(60)
-    tim.forward(100)
-    tim.right(60)
-    tim.forward(100)
-def hep():
-    tim.color("indigo")
-    tim.right(60)
-    tim.forward(100)
-    tim.right(51.4285714286)
-    tim.forward(100)
-    tim.right(51.4285714286)
-    tim.forward(100)
-    tim.right(51.4285714286)
-    tim.forward(100)
-    tim.right(51.4285714286)
-    tim.forward(100)
-    tim.right(51.4285714286)
-    tim.forward(100)
-    tim.right(51.4285714286)
-    tim.forward(100)
-    tim.right(51.4285714286)
-    tim.forward(100)
-
-def oct():
-    tim.color("crimson")
-    tim.right(45)
-    tim.forward(100)
-    tim.right(45)
-    tim.forward(100)
-    tim.right(45)
-    tim.forward(100)
-    tim.right(45)
-    tim.forward(100)
-    tim.right(45)
-    tim.forward(100)
-    tim.right(45)
-    tim.forward(100)
-    tim.right(45)
-    tim.forward(100)
-    tim.right(45)
-    tim.forward(100)
-def non():
-    tim.color("blue")
-    tim.right(40)
-    tim.forward(100)
-    tim.right(40)
-    tim.forward(100)
-    tim.right(40)
-    tim.forward(100)
-    tim.right(40)
-    tim.forward(100)
-    tim.right(40)
-    tim.forward(100)
-    tim.right(40)
-    tim.forward(100)
-    tim.right(40)
-    tim.forward(100)
-    tim.right(40)
-    tim.forward(100)
-    tim.right(40)
-    tim.forward(100)
-def dec():
-    tim.color("green")
-    tim.right(36)
-    tim.forward(100)
-    tim.right(36)
-    tim.forward(100)
-    tim.right(36)
-    tim.forward(100)
-    tim.right(36)
-    tim.forward(100)
-    tim.right(36)
-    tim.forward(100)
-    tim.right(36)
-    tim.forward(100)
-    tim.right(36)
-    tim.forward(100)
-    tim.right(36)
-    tim.forward(100)
-    tim.right(36)
-    tim.forward(100)
-    tim.right(36)
-    tim.forward(100)
+tim = t.Turtle()
+t.colormode(255)
+tim.speed("fastest")
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    color = (r, g, b)
+    return color
 
 
-triangle()
-square()
-pentagon()
-hex()
-hep()
-oct()
-non()
-dec()
+def draw_spirograph(size_of_gap):
+    for _ in range(int(360 / size_of_gap)):
+        tim.color(random_color())
+        tim.circle(100)
+        tim.setheading(tim.heading() + size_of_gap)
 
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-screen = Screen()
-screen.exitonclick()
+draw_spirograph(5)

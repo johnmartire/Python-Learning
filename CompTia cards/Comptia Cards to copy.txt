@@ -1,0 +1,503 @@
+content = """\
+Hardware (PC Components, Peripherals, Storage Devices)
+1. What is the function of a power supply unit (PSU)?
+- Converts AC to DC and powers components.
+2. What does RAM do?
+- Temporary memory for running processes.
+3. What is the difference between SSD and HDD?
+- SSD uses flash memory; HDD uses spinning disks.
+4. What is a GPU used for?
+- Graphics processing and rendering.
+5. What is the role of the motherboard?
+- Connects all PC components.
+6. What is BIOS/UEFI?
+- Firmware to initialize hardware during boot.
+7. What is a heat sink?
+- Device to dissipate heat from components.
+8. What is a network interface card (NIC)?
+- Hardware to connect to networks.
+9. What is the purpose of an optical drive?
+- Reads/writes CDs, DVDs, Blu-rays.
+10. What are peripheral devices?
+- External devices like mouse, keyboard.
+11. What is RAID?
+- Data storage technology for redundancy or speed.
+12. What is a PCIe slot?
+- Slot for expansion cards like GPUs.
+13. What is the difference between USB 2.0 and USB 3.0?
+- USB 3.0 has faster transfer speeds.
+14. What is a display port used for?
+- Digital video output.
+15. What is a solid-state hybrid drive?
+- Combines SSD speed and HDD capacity.
+16. What is a modem?
+- Converts digital to analog signals for internet.
+17. What is a KVM switch?
+- Device to control multiple computers with one keyboard/mouse.
+18. What is hot-swapping?
+- Replacing hardware without shutting down.
+19. What is the difference between 32-bit and 64-bit architecture?
+- 64-bit supports more memory and larger data sizes.
+20. What is an M.2 drive?
+- Small form factor SSD connected directly to motherboard.
+21. What is a Thunderbolt port?
+- High-speed data and video connection.
+22. What is the purpose of a CPU cooler?
+- Prevents processor overheating.
+23. What is the maximum length of a USB cable?
+- Typically 5 meters for USB 2.0.
+24. What is the function of a case fan?
+- Circulates air to cool components.
+25. What is an ESD strap used for?
+- Prevents electrostatic discharge damage.
+26. What is the difference between HDMI and VGA?
+- HDMI is digital, VGA is analog.
+27. What is the use of CMOS battery?
+- Keeps BIOS settings when powered off.
+28. What is an SSD TRIM command?
+- Helps maintain SSD performance.
+29. What is the purpose of a surge protector?
+- Protects equipment from voltage spikes.
+30. What is the difference between a laptop and a desktop?
+- Laptop is portable, desktop is stationary.
+31. What is latency in storage devices?
+- Delay before data transfer starts.
+32. What is a docking station?
+- Extends laptop connectivity ports.
+33. What is the function of a sound card?
+- Processes audio signals.
+34. What is a DisplayPort MST hub?
+- Allows multiple monitors from one port.
+35. What is the SATA interface used for?
+- Connects storage devices.
+36. What is a printer driver?
+- Software that enables OS to communicate with printer.
+37. What is a DPI setting in a mouse?
+- Sensitivity of mouse pointer.
+38. What is a smart card reader?
+- Reads authentication cards.
+39. What is a RAID 5 setup?
+- Data striped with parity for fault tolerance.
+40. What is a USB OTG?
+- USB On-The-Go allows devices to act as host.
+41. What is an Ethernet crossover cable?
+- Connects two computers directly.
+42. What is a hot-plug device?
+- Can be added/removed while powered on.
+43. What is the difference between laser and inkjet printers?
+- Laser uses toner; inkjet sprays ink.
+44. What is a UPS?
+- Uninterruptible Power Supply for backup power.
+45. What is a proxy server?
+- Intermediate server between client and internet.
+46. What is a biometric device?
+- Uses biological data for authentication.
+47. What is the maximum speed of USB 3.1 Gen 2?
+- Up to 10 Gbps.
+48. What is a network attached storage (NAS)?
+- Dedicated file storage device accessible via network.
+49. What is a dot pitch in monitors?
+- Distance between pixels.
+50. What is a magnetic hard drive platter?
+- The disk inside HDD storing data.
+
+Networking (Protocols, Ports, Network Types, Tools)
+1. What is an IP address?
+- Identifier for devices on a network.
+2. What is DHCP?
+- Dynamic Host Configuration Protocol assigns IPs.
+3. What is DNS?
+- Domain Name System translates domain names to IPs.
+4. What is a MAC address?
+- Unique hardware identifier for network cards.
+5. What is TCP/IP?
+- Protocol suite for internet communication.
+6. What port does HTTP use?
+- Port 80.
+7. What port does HTTPS use?
+- Port 443.
+8. What is a subnet mask?
+- Defines network and host portions of an IP address.
+9. What is NAT?
+- Network Address Translation for IP sharing.
+10. What is a VPN?
+- Virtual Private Network for secure connections.
+11. What is a firewall?
+- Security system controlling network traffic.
+12. What is a router?
+- Forwards data packets between networks.
+13. What is a switch?
+- Connects devices on the same network.
+14. What is the difference between TCP and UDP?
+- TCP is connection-oriented; UDP is connectionless.
+15. What is traceroute?
+- Tracks path of packets to a destination.
+16. What is ping used for?
+- Tests network connectivity.
+17. What is a VLAN?
+- Virtual Local Area Network segment.
+18. What is Wi-Fi?
+- Wireless network technology.
+19. What is 802.11ac?
+- Wi-Fi standard with high throughput.
+20. What is a DMZ?
+- Demilitarized Zone for exposed servers.
+21. What is port forwarding?
+- Redirects traffic to specific internal IP.
+22. What is a proxy server?
+- Intermediate server for requests.
+23. What is a network protocol analyzer?
+- Tool to capture and analyze packets.
+24. What is ARP?
+- Address Resolution Protocol resolves IP to MAC.
+25. What is bandwidth?
+- Max data transfer rate.
+26. What is latency?
+- Delay in data transmission.
+27. What is a default gateway?
+- Router IP used to access outside networks.
+28. What is SSH?
+- Secure Shell for encrypted remote access.
+29. What is FTP?
+- File Transfer Protocol.
+30. What is SNMP?
+- Simple Network Management Protocol.
+31. What is a public IP?
+- IP accessible over the internet.
+32. What is a private IP?
+- IP used inside local networks.
+33. What is PoE?
+- Power over Ethernet supplies power to devices.
+34. What is a MAC filter?
+- Restricts network access by MAC address.
+35. What is a subnet?
+- Smaller network within larger network.
+36. What is a wireless access point (WAP)?
+- Device to extend Wi-Fi coverage.
+37. What is a captive portal?
+- Web page to authenticate users on Wi-Fi.
+38. What is a loopback address?
+- 127.0.0.1 used to test local network stack.
+39. What is QoS?
+- Quality of Service prioritizes network traffic.
+40. What is a multicast?
+- Single transmission to multiple receivers.
+41. What is an SSID?
+- Wi-Fi network name.
+42. What is a VPN concentrator?
+- Device managing multiple VPN connections.
+43. What is a collision domain?
+- Network segment where collisions occur.
+44. What is a broadcast domain?
+- Network segment that receives broadcast packets.
+45. What is a wireless channel?
+- Frequency band used by Wi-Fi.
+46. What is a rogue access point?
+- Unauthorized Wi-Fi access device.
+47. What is an MX record?
+- Mail exchange record for email routing.
+48. What is a reverse proxy?
+- Forwards client requests to servers.
+49. What is a port scanner?
+- Tool to identify open ports.
+50. What is a network loop?
+- Redundant path causing broadcast storms.
+
+Operating Systems (Windows, Linux, macOS basics, commands)
+1. What is an OS?
+- Software managing hardware and software resources.
+2. What is the Windows Registry?
+- Database of system and application settings.
+3. What is a Linux shell?
+- Command-line interface.
+4. What is the purpose of the Task Manager in Windows?
+- Monitor running processes and system performance.
+5. What is sudo in Linux?
+- Execute commands with elevated privileges.
+6. What does the 'ls' command do?
+- Lists directory contents.
+7. What is the difference between Windows and Linux file systems?
+- Windows uses NTFS, Linux uses ext4, etc.
+8. What is a macOS Finder?
+- File management interface.
+9. What does the 'ps' command show?
+- List running processes.
+10. What is the function of 'chmod'?
+- Change file permissions.
+11. What is Safe Mode?
+- Diagnostic mode with minimal drivers.
+12. What is the 'ipconfig' command used for?
+- Displays network configuration in Windows.
+13. What is the 'ifconfig' command?
+- Displays network interfaces in Linux.
+14. What is a system service?
+- Background processes in OS.
+15. What is the purpose of a device driver?
+- Software to control hardware devices.
+16. What is a kernel?
+- Core of an operating system.
+17. What is the Windows Event Viewer?
+- Logs system events and errors.
+18. What is the macOS Terminal?
+- Command-line interface for macOS.
+19. What does 'df' command do?
+- Shows disk space usage.
+20. What is the Windows Update?
+- System for installing patches and updates.
+21. What is a virtual machine?
+- Emulated computer system.
+22. What is a software repository?
+- Storage location for software packages.
+23. What is the command to copy files in Linux?
+- cp
+24. What does the 'rm' command do?
+- Removes files or directories.
+25. What is the Windows System Restore?
+- Reverts system to previous state.
+26. What is a file permission in Linux?
+- Defines access rights.
+27. What is the macOS Spotlight?
+- Search tool for files and apps.
+28. What is a batch file?
+- Script file with commands for Windows.
+29. What is a shell script?
+- Script file for command-line tasks in Linux.
+30. What is a partition?
+- Divided section of storage device.
+31. What is a swap file/partition?
+- Space used as virtual memory.
+32. What is Windows Safe Mode with Networking?
+- Safe mode that allows internet access.
+33. What is the command to check disk health in Windows?
+- chkdsk
+34. What is the Linux 'top' command?
+- Shows system processes and resource use.
+35. What is a user account?
+- Profile with permissions.
+36. What is macOS Time Machine?
+- Backup utility.
+37. What is the 'netstat' command?
+- Shows network connections.
+38. What is a symbolic link?
+- Pointer to another file/directory.
+39. What is the 'grep' command?
+- Search text in files.
+40. What is an OS patch?
+- Software fix/update.
+41. What is the command to list files in Windows CMD?
+- dir
+42. What is the Windows PowerShell?
+- Command-line shell with scripting.
+43. What is a firewall in OS?
+- Security barrier to control traffic.
+44. What is an OS kernel panic?
+- Critical system failure.
+45. What is the 'mount' command?
+- Attach filesystem.
+46. What is a login shell?
+- Initial shell after login.
+47. What is a cron job?
+- Scheduled task in Linux.
+48. What is the difference between Windows Home and Pro?
+- Pro has advanced management/security features.
+49. What is a device manager in Windows?
+- Manages hardware devices.
+50. What is macOS Dock?
+- App launcher bar.
+
+Security (Threats, malware, authentication, encryption)
+1. What is malware?
+- Malicious software.
+2. What is phishing?
+- Fraudulent attempt to get sensitive info.
+3. What is a firewall?
+- Filters network traffic.
+4. What is ransomware?
+- Malware that encrypts data for ransom.
+5. What is two-factor authentication (2FA)?
+- Requires two forms of identity verification.
+6. What is a virus?
+- Malware that attaches to files.
+7. What is spyware?
+- Software that spies on user activity.
+8. What is social engineering?
+- Manipulating people to reveal info.
+9. What is encryption?
+- Encoding data to protect it.
+10. What is a brute force attack?
+- Trying many passwords rapidly.
+11. What is a vulnerability?
+- Weakness exploitable by attackers.
+12. What is a patch?
+- Software update fixing security flaws.
+13. What is a digital certificate?
+- Verifies identity online.
+14. What is SSL/TLS?
+- Protocols for secure internet communication.
+15. What is a man-in-the-middle attack?
+- Intercepting communication secretly.
+16. What is a honeypot?
+- Decoy system to attract attackers.
+17. What is a rootkit?
+- Malware hiding with admin privileges.
+18. What is a Trojan horse?
+- Malware disguised as legitimate software.
+19. What is DDoS?
+- Distributed Denial of Service attack.
+20. What is the principle of least privilege?
+- Users get minimum access necessary.
+21. What is a security policy?
+- Rules to protect resources.
+22. What is a backup?
+- Copy of data for recovery.
+23. What is endpoint security?
+- Protecting devices on a network.
+24. What is a password manager?
+- Tool to store passwords securely.
+25. What is a security audit?
+- Review of security measures.
+26. What is a botnet?
+- Network of infected computers.
+27. What is multi-factor authentication (MFA)?
+- More than two forms of verification.
+28. What is data loss prevention (DLP)?
+- Tools to prevent data leaks.
+29. What is a security incident?
+- Event that threatens security.
+30. What is a VPN used for?
+- Secure remote network access.
+31. What is a certificate authority (CA)?
+- Issues digital certificates.
+32. What is hashing?
+- Creating fixed-size data fingerprint.
+33. What is a whitelist?
+- Allowed list of users or apps.
+34. What is a blacklist?
+- Blocked list of users or apps.
+35. What is physical security?
+- Protecting hardware physically.
+36. What is a security token?
+- Physical device for authentication.
+37. What is biometrics?
+- Using biological traits for ID.
+38. What is a security breach?
+- Unauthorized access to data.
+39. What is a sandbox?
+- Isolated environment for testing.
+40. What is two-step verification?
+- Another term for 2FA.
+41. What is a spam filter?
+- Blocks unwanted email.
+42. What is spear phishing?
+- Targeted phishing attack.
+43. What is a software firewall?
+- Firewall running on a device.
+44. What is a hardware firewall?
+- Physical firewall device.
+45. What is a security patch?
+- Fixes vulnerabilities.
+46. What is a keylogger?
+- Records keystrokes secretly.
+47. What is a cookie?
+- Data stored by websites on browsers.
+48. What is cross-site scripting (XSS)?
+- Web attack injecting scripts.
+49. What is SQL injection?
+- Database attack with malicious code.
+50. What is data encryption standard (DES)?
+- Older symmetric encryption algorithm.
+
+Software Troubleshooting (Errors, recovery, tools)
+1. What is BSOD?
+- Blue Screen of Death; fatal Windows error.
+2. What is safe mode used for?
+- Troubleshooting with minimal drivers.
+3. What is system restore?
+- Rolls system back to previous state.
+4. What is a driver conflict?
+- When two drivers interfere.
+5. What is event viewer?
+- Logs system errors and events.
+6. What is a malware scan?
+- Searching system for malicious software.
+7. What is a memory leak?
+- Program consuming excessive RAM.
+8. What is a software patch?
+- Update to fix bugs.
+9. What is disk cleanup?
+- Removing unnecessary files.
+10. What is a hardware diagnostic tool?
+- Checks hardware functionality.
+11. What is a crash dump file?
+- Data saved after system crash.
+12. What is reinstalling software?
+- Fixes corrupted files.
+13. What is a virus scan?
+- Detects viruses.
+14. What is a firmware update?
+- Updates device software.
+15. What is troubleshooting steps?
+- Identify, isolate, resolve.
+16. What is application compatibility?
+- Software working with OS.
+17. What is virtual memory?
+- Using disk space as RAM.
+18. What is driver update?
+- Installing latest driver.
+19. What is the command 'sfc /scannow'?
+- Checks Windows system files.
+20. What is a system image?
+- Backup of entire system.
+21. What is a recovery partition?
+- Hidden space for OS recovery.
+22. What is a log file?
+- Records system events.
+23. What is a network reset?
+- Restores network settings.
+24. What is a system freeze?
+- OS stops responding.
+25. What is a blue screen error code?
+- Numeric error identifier.
+26. What is a safe boot?
+- Loads OS with minimal services.
+27. What is a clean boot?
+- Starts with minimal startup programs.
+28. What is an application crash?
+- Program stops unexpectedly.
+29. What is Windows Recovery Environment?
+- Tools for troubleshooting.
+30. What is a corrupted user profile?
+- User data damaged causing issues.
+31. What is disk defragmentation?
+- Organizes fragmented data.
+32. What is the 'chkdsk' command?
+- Checks disk for errors.
+33. What is system log?
+- Record of system events.
+34. What is a failed update?
+- Update that causes issues.
+35. What is antivirus software?
+- Protects against malware.
+36. What is a system rollback?
+- Undo recent changes.
+37. What is a firewall misconfiguration?
+- Incorrect security settings.
+38. What is a BSOD stop code?
+- Error code causing crash.
+39. What is a performance monitor?
+- Tracks system metrics.
+40. What is spyware removal?
+- Eliminates tracking software.
+41. What is a registry cleaner?
+- Removes invalid registry entries.
+42. What is a crash report?
+- Data collected after app crash.
+43. What is driver rollback?
+- Revert to previous driver version.
+44. What is an error message?
+- Notification of a problem.
+45. What is a system update?
+- Software upgrade.
+46. What is a hardware failure?
+- Component malfunction.
+47. What
